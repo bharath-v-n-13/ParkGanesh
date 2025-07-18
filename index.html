@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Park Ganeshotsav, Kadiri 2025</title>
+    <link rel="icon" href="/favicon.ico" type="E:\ParkGanesh-website\WhatsApp Image 2025-07-13 at 12.51.19_b54d0b78.jpg">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Tinos for headings, Inter for body -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom Styles and Animations -->
+    <style>
+        /* Applying custom fonts */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FFF8E1; /* Light cream background */
+        }
+        h1, h2, h3, .font-heading {
+            font-family: 'Tinos', serif;
+        }
+
+        /* --- NEW: Enhanced Hero Section Background --- */
+        @keyframes animated-gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .hero-bg {
+            background: linear-gradient(-45deg, #ff8c00, #ff4500, #d2691e, #b8860b);
+            background-size: 400% 400%;
+            animation: animated-gradient 18s ease infinite;
+            position: relative;
+        }
+        /* --- NEW: Aesthetic Ganesha Background Image --- */
+        .hero-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('https://placehold.co/1200x800/ffffff/eab308?text=Ganesh+Outline');
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0.1;
+            mix-blend-mode: screen; /* Blends the image nicely with the background */
+            z-index: 1;
+        }
+        
+        /* --- NEW: Particle Canvas for glowing embers --- */
+        #particle-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+        }
+
+        /* --- NEW: Shimmer effect for main heading --- */
+        @keyframes shimmer {
+            0% { background-position: -500px 0; }
+            100% { background-position: 500px 0; }
+        }
+        .shimmer-text {
+            background: linear-gradient(to right, #fff 20%, #ffeb3b 40%, #fff 60%);
+            background-size: 1000px 100%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: shimmer 4s infinite linear;
+        }
+
+        /* --- ENHANCED: Card styles with richer hover effect --- */
+        .custom-card {
+            background-color: white;
+            border: 1px solid #F59E0B; /* Amber border */
+            border-radius: 1rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.07), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+        .custom-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 0 25px rgba(245, 158, 11, 0.5); /* Saffron glow */
+            border-color: #fbbf24;
+        }
+
+        /* --- ENHANCED: Gallery image hover effect --- */
+        .gallery-img {
+            transition: transform 0.4s ease, filter 0.4s ease;
+            border-radius: 0.5rem;
+        }
+        .gallery-img:hover {
+            transform: scale(1.05);
+            filter: brightness(1.1) saturate(1.2);
+        }
+
+        /* Animation for elements to fade in on scroll */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .fade-in-section {
+            opacity: 0;
+            animation: fadeIn 1s ease-out forwards;
+            animation-delay: 0.2s;
+        }
+        
+        /* --- NEW: Animated Garland --- */
+        @keyframes pulse-garland {
+            0%, 100% { filter: drop-shadow(0 0 2px #fef3c7); }
+            50% { filter: drop-shadow(0 0 8px #fef3c7); }
+        }
+        .garland {
+            position: absolute;
+            top: 60px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            max-width: 600px;
+            z-index: 100; /* Ensure it's on top */
+            pointer-events: none;
+            animation: pulse-garland 3s infinite ease-in-out;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <!-- Header -->
+    <header class="bg-orange-600/80 backdrop-blur-sm sticky top-0 z-50 shadow-lg">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <div class="font-heading text-2xl font-bold text-white">
+                Park Ganeshotsav, Kadiri
+            </div>
+            <div class="hidden md:flex space-x-6 text-white">
+                <a href="#home" class="hover:text-yellow-300 transition-colors">Home</a>
+                <a href="#schedule" class="hover:text-yellow-300 transition-colors">Schedule</a>
+                <a href="#memories" class="hover:text-yellow-300 transition-colors">Memories</a>
+                <a href="#gallery" class="hover:text-yellow-300 transition-colors">Gallery</a>
+                <a href="#location" class="hover:text-yellow-300 transition-colors">Location</a>
+            </div>
+        </nav>
+    </header>
+    
+    <!-- Decorative Garland SVG -->
+    <svg class="garland" viewBox="0 0 800 100" xmlns="http://www.w3.org/2000/svg">
+      <path d="M10,50 C150,120 250,-20 400,50 S650,120 790,50" fill="none" stroke="#16a34a" stroke-width="4"/>
+      <circle cx="100" cy="50" r="15" fill="#f97316"/> <circle cx="100" cy="50" r="8" fill="#fef3c7"/>
+      <circle cx="250" cy="20" r="15" fill="#f97316"/> <circle cx="250" cy="20" r="8" fill="#fef3c7"/>
+      <circle cx="400" cy="50" r="15" fill="#f97316"/> <circle cx="400" cy="50" r="8" fill="#fef3c7"/>
+      <circle cx="550" cy="80" r="15" fill="#f97316"/> <circle cx="550" cy="80" r="8" fill="#fef3c7"/>
+      <circle cx="700" cy="30" r="15" fill="#f97316"/> <circle cx="700" cy="30" r="8" fill="#fef3c7"/>
+    </svg>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero-bg text-white text-center pt-32 pb-20 md:pt-40 md:pb-32 px-4 overflow-hidden">
+             <canvas id="particle-canvas"></canvas>
+             <div class="relative z-10">
+                <h1 class="shimmer-text text-4xl md:text-7xl font-bold mb-4 drop-shadow-lg">వక్రతుండ మహాకాయ సూర్యకోటి సమప్రభ</h1>
+                <p class="text-lg md:text-2xl mb-8 drop-shadow-md">Welcome to Our Community's Grand Ganesha Celebration</p>
+                <img 
+                    src="E:\ParkGanesh-website\WhatsApp Image 2025-07-13 at 12.51.19_b54d0b78.jpg" 
+                    alt="Lord Ganesha" 
+                    class="mx-auto rounded-full w-48 h-48 md:w-64 md:h-64 object-cover border-8 border-yellow-400 shadow-2xl mb-8"
+                    onerror="this.onerror=null;this.src='https://placehold.co/400x400/FFF8E1/B91C1C?text=Image+Error';"
+                >
+                
+                <!-- Countdown Timer -->
+                <div id="countdown" class="mt-12">
+                    <h2 class="font-heading text-3xl md:text-4xl mb-6">Festival Begins In</h2>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-2xl mx-auto text-center">
+                        <div class="bg-white/20 backdrop-blur-sm p-4 rounded-lg">
+                            <div id="days" class="text-4xl font-bold">00</div>
+                            <div class="text-sm">Days</div>
+                        </div>
+                        <div class="bg-white/20 backdrop-blur-sm p-4 rounded-lg">
+                            <div id="hours" class="text-4xl font-bold">00</div>
+                            <div class="text-sm">Hours</div>
+                        </div>
+                        <div class="bg-white/20 backdrop-blur-sm p-4 rounded-lg col-span-1">
+                            <div id="minutes" class="text-4xl font-bold">00</div>
+                            <div class="text-sm">Minutes</div>
+                        </div>
+                        <div class="bg-white/20 backdrop-blur-sm p-4 rounded-lg col-span-1">
+                            <div id="seconds" class="text-4xl font-bold">00</div>
+                            <div class="text-sm">Seconds</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Event Schedule Section -->
+        <section id="schedule" class="py-20 px-4 container mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl md:text-5xl font-bold text-red-800">Festival Schedule</h2>
+                <p class="text-lg text-gray-600 mt-2">Join us in the daily celebrations and events.</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Schedule Cards -->
+                <div class="custom-card p-6 text-center">
+                    <div class="text-3xl font-bold text-orange-500 mb-2">Day 1</div>
+                    <h3 class="text-xl font-heading font-bold mb-4">Ganesh Pratishthapana</h3>
+                    <p class="text-gray-600"><strong>Morning:</strong> 9:00 AM - Pran Pratishtha Puja</p>
+                    <p class="text-gray-600"><strong>Evening:</strong> 7:00 PM - Maha Aarti</p>
+                </div>
+                <div class="custom-card p-6 text-center">
+                    <div class="text-3xl font-bold text-orange-500 mb-2">Daily</div>
+                    <h3 class="text-xl font-heading font-bold mb-4">Aarti & Prasad</h3>
+                    <p class="text-gray-600"><strong>Morning Aarti:</strong> 8:00 AM</p>
+                    <p class="text-gray-600"><strong>Evening Aarti:</strong> 7:00 PM</p>
+                    <p class="text-gray-600"><strong>Prasad Distribution:</strong> After Evening Aarti</p>
+                </div>
+                <div class="custom-card p-6 text-center">
+                    <div class="text-3xl font-bold text-orange-500 mb-2">Day 5</div>
+                    <h3 class="text-xl font-heading font-bold mb-4">Cultural Evening</h3>
+                    <p class="text-gray-600"><strong>Starts at 8:00 PM:</strong></p>
+                    <p class="text-gray-600">Traditional Dance & Music Program</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- NEW: Our Memories Section -->
+        <section id="memories" class="py-20 px-4 bg-yellow-50">
+            <div class="container mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl md:text-5xl font-bold text-red-800">Our Memories</h2>
+                    <p class="text-lg text-gray-600 mt-2">A look back at last year's beautiful celebrations.</p>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                    <div><img class="gallery-img h-auto w-full object-cover aspect-video shadow-lg" src="E:\ParkGanesh-website\WhatsApp Image 2025-07-18 at 13.21.39_687297dc.jpg" alt="Previous Year Ganesha Idol" onerror="this.onerror=null;this.src='https://placehold.co/600x400?text=Error';"></div>
+                    <div><img class="gallery-img h-auto w-full object-cover aspect-video shadow-lg" src="https://placehold.co/600x400/FDE68A/92400E?text=Aarti+2024" alt="Previous Year Aarti" onerror="this.onerror=null;this.src='https://placehold.co/600x400?text=Error';"></div>
+                    <div><img class="gallery-img h-auto w-full object-cover aspect-video shadow-lg" src="E:\ParkGanesh-website\WhatsApp Image 2025-07-18 at 13.18.00_138f6414.jpg" alt="Previous Year Community Gathering" onerror="this.onerror=null;this.src='https://placehold.co/600x400?text=Error';"></div>
+                    <div><img class="gallery-img h-auto w-full object-cover aspect-video shadow-lg" src="https://placehold.co/600x400/FDE68A/92400E?text=Prasad+Distribution" alt="Previous Year Prasad" onerror="this.onerror=null;this.src='https://placehold.co/600x400?text=Error';"></div>
+                    <div><img class="gallery-img h-auto w-full object-cover aspect-video shadow-lg" src="https://placehold.co/600x400/FDE68A/92400E?text=Decorations+2024" alt="Previous Year Decorations" onerror="this.onerror=null;this.src='https://placehold.co/600x400?text=Error';"></div>
+                    <div><img class="gallery-img h-auto w-full object-cover aspect-video shadow-lg" src="https://placehold.co/600x400/FDE68A/92400E?text=Happy+Faces" alt="Previous Year Happy Faces" onerror="this.onerror=null;this.src='https://placehold.co/600x400?text=Error';"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Photo Gallery Section (This Year) -->
+        <section id="gallery" class="py-20 px-4 bg-red-50">
+             <div class="container mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl md:text-5xl font-bold text-red-800">This Year's Glimpses of Joy</h2>
+                    <p class="text-lg text-gray-600 mt-2">Cherishing the moments from our current celebrations.</p>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <!-- Gallery Images -->
+                    <div class="grid gap-4">
+                        <div><img class="gallery-img h-auto max-w-full shadow-lg" src="https://placehold.co/500x800/FBCFE8/831843?text=Pandal+Decor" alt="Pandal Decoration" onerror="this.onerror=null;this.src='https://placehold.co/500x800?text=Error';"></div>
+                        <div><img class="gallery-img h-auto max-w-full shadow-lg" src="https://placehold.co/500x500/FBCFE8/831843?text=Aarti+Time" alt="Aarti" onerror="this.onerror=null;this.src='https://placehold.co/500x500?text=Error';"></div>
+                    </div>
+                    <div class="grid gap-4">
+                        <div><img class="gallery-img h-auto max-w-full shadow-lg" src="https://placehold.co/500x500/FBCFE8/831843?text=Devotees" alt="Devotees" onerror="this.onerror=null;this.src='https://placehold.co/500x500?text=Error';"></div>
+                        <div><img class="gallery-img h-auto max-w-full shadow-lg" src="https://placehold.co/500x800/FBCFE8/831843?text=Cultural+Event" alt="Cultural Event" onerror="this.onerror=null;this.src='https://placehold.co/500x800?text=Error';"></div>
+                    </div>
+                    <div class="grid gap-4">
+                        <div><img class="gallery-img h-auto max-w-full shadow-lg" src="https://placehold.co/500x800/FBCFE8/831843?text=Prasad" alt="Prasad" onerror="this.onerror=null;this.src='https://placehold.co/500x800?text=Error';"></div>
+                        <div><img class="gallery-img h-auto max-w-full shadow-lg" src="https://placehold.co/500x500/FBCFE8/831843?text=Kids+Enjoying" alt="Kids" onerror="this.onerror=null;this.src='https://placehold.co/500x500?text=Error';"></div>
+                    </div>
+                     <div class="grid gap-4">
+                        <div><img class="gallery-img h-auto max-w-full shadow-lg" src="https://placehold.co/500x500/FBCFE8/831843?text=Volunteers" alt="Volunteers" onerror="this.onerror=null;this.src='https://placehold.co/500x500?text=Error';"></div>
+                        <div><img class="gallery-img h-auto max-w-full shadow-lg" src="https://placehold.co/500x800/FBCFE8/831843?text=Visarjan+Day" alt="Visarjan" onerror="this.onerror=null;this.src='https://placehold.co/500x800?text=Error';"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Location Section -->
+        <section id="location" class="py-20 px-4 container mx-auto">
+             <div class="text-center mb-12">
+                <h2 class="text-4xl md:text-5xl font-bold text-red-800">Come, Join Us</h2>
+                <p class="text-lg text-gray-600 mt-2">Find your way to the celebrations.</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <!-- Map -->
+                <div class="rounded-lg overflow-hidden shadow-2xl border-4 border-yellow-400">
+                     <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d97.1994863332028!2d78.1600223095116!3d14.12100699986395!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTTCsDA3JzE1LjYiTiA3OMKwMDknMzYuMSJF!5e1!3m2!1sen!2sin!4v1721305593189!5m2!1sen!2sin" 
+                        width="100%" 
+                        height="450" 
+                        style="border:0;" 
+                        allowfullscreen 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+                <!-- Address -->
+                <div class="text-center md:text-left">
+                    <h3 class="font-heading text-3xl font-bold mb-4">Pandal Address</h3>
+                    <p class="text-lg text-gray-700 mb-2">Park Ganesh Kadiri,</p>
+                    <p class="text-lg text-gray-700 mb-2">Adapala Street, Kadiri,</p>
+                    <p class="text-lg text-gray-700 mb-4">Andhra Pradesh 515591</p>
+                    <p class="text-gray-600 italic">Look for the beautiful lights and listen for the music!</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-10 px-4">
+        <div class="container mx-auto text-center">
+            <h3 class="font-heading text-2xl font-bold mb-2">Ganpati Bappa Morya!</h3>
+            <p class="mb-4">Website designed with love for our community.</p>
+            <p class="text-sm text-gray-400">&copy; 2025 Park Ganesh Utsava Samithi, Kadiri. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // --- NEW: Enhanced Particle Effect on Canvas ---
+        const canvas = document.getElementById('particle-canvas');
+        const ctx = canvas.getContext('2d');
+        let particlesArray;
+
+        function setCanvasSize() {
+            canvas.width = document.getElementById('home').offsetWidth;
+            canvas.height = document.getElementById('home').offsetHeight;
+        }
+        setCanvasSize();
+
+        class Particle {
+            constructor(x, y, directionX, directionY, size) {
+                this.x = x;
+                this.y = y;
+                this.directionX = directionX;
+                this.directionY = directionY;
+                this.size = size;
+            }
+            draw() {
+                ctx.beginPath();
+                // Create a glowing ember effect
+                const gradient = ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, this.size);
+                gradient.addColorStop(0, 'rgba(255, 215, 0, 0.8)'); // Inner gold
+                gradient.addColorStop(0.4, 'rgba(255, 140, 0, 0.4)'); // Middle dark orange
+                gradient.addColorStop(1, 'rgba(255, 69, 0, 0)'); // Outer transparent
+                
+                ctx.fillStyle = gradient;
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+            update() {
+                // Move particle
+                this.x += this.directionX;
+                this.y += this.directionY;
+
+                // Reset particle if it moves off screen
+                if (this.y < 0) {
+                    this.y = canvas.height + this.size;
+                    this.x = Math.random() * canvas.width;
+                }
+
+                this.draw();
+            }
+        }
+
+        function init() {
+            particlesArray = [];
+            let numberOfParticles = (canvas.height * canvas.width) / 12000;
+            for (let i = 0; i < numberOfParticles; i++) {
+                let size = (Math.random() * 4) + 2;
+                let x = Math.random() * canvas.width;
+                let y = Math.random() * canvas.height;
+                let directionX = (Math.random() * 0.4) - 0.2;
+                let directionY = -Math.random() * 0.5 - 0.2; // Move upwards
+                particlesArray.push(new Particle(x, y, directionX, directionY, size));
+            }
+        }
+
+        function animate() {
+            requestAnimationFrame(animate);
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            for (let i = 0; i < particlesArray.length; i++) {
+                particlesArray[i].update();
+            }
+        }
+        
+        window.addEventListener('resize', function(){
+            setCanvasSize();
+            init();
+        });
+        
+        init();
+        animate();
+
+        // --- Countdown Timer Logic ---
+        const countdownDate = new Date("Sep 7, 2025 00:00:00").getTime();
+        const countdownFunction = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = countdownDate - now;
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerText = String(days).padStart(2, '0');
+            document.getElementById("hours").innerText = String(hours).padStart(2, '0');
+            document.getElementById("minutes").innerText = String(minutes).padStart(2, '0');
+            document.getElementById("seconds").innerText = String(seconds).padStart(2, '0');
+
+            if (distance < 0) {
+                clearInterval(countdownFunction);
+                document.getElementById("countdown").innerHTML = `<h2 class="font-heading text-3xl md:text-4xl">The Festival has Begun!</h2>`;
+            }
+        }, 1000);
+
+        // --- Intersection Observer for Fade-in Animation ---
+        const sections = document.querySelectorAll('section');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in-section');
+                    observer.unobserve(entry.target); // Animate only once
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+
+</body>
+</html>

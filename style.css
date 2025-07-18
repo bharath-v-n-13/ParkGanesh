@@ -1,0 +1,38 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: white;
+  background-image: url('Screenshot 2025-07-10 190509.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
+  backdrop-filter: brightness(0.9);
+}
+
+header, main, footer {
+  background-color: rgba(0, 0, 0, 0.5); /* semi-transparent background */
+  padding: 20px;
+  margin: 20px;
+  border-radius: 10px;
+}
+
+nav a {
+  color: yellow;
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: bold;
+}
+
+h1 {
+  text-align: center;
+  color: orange;
+}
+
+h2 {
+  color: #ffd700;
+}
+
+ul {
+  list-style-type: square;
+}
